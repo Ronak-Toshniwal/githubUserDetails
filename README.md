@@ -1,6 +1,11 @@
 ![ezgif com-gif-maker](https://github.com/Ronak-Toshniwal/githubUserDetails/blob/main/ezgif.com-gif-maker%20(1).gif)
 
-This git idea is inspired by salesforce developer rahul malhotra
+This git idea is inspired by salesforce developer rahul malhotra.
+Made in combination with custom coded CSS and Slds css
+
+if you get ratelimit error from github api then use 
+testData ={} and store its data in data=[] so you have downloaded to work with.
+also comment or copy repos data and create a new object with repos data and use it for local purpose
 
 
 # Salesforce DX Project: Next Steps
