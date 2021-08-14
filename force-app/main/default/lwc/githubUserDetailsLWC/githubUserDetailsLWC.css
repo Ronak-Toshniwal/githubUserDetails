@@ -1,0 +1,50 @@
+.card {
+    width: 800px;
+}
+.inputButton{
+    display: flex;
+    width: 800px;
+}
+.name{
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 10%;
+}
+.flexDiv {
+    display: flex;
+}
+
+.left{
+    margin-top:2%;
+    background-color: gray;
+    
+    color: white;
+    
+    padding-top: 2%;
+    height: 40px;
+}
+.right{
+    height: 40px;
+    margin-top:2%;
+   border: gray 2px solid;
+    padding-top: 2%;
+
+}
+.topAlign{
+    margin-top: 5%;
+}
+
+lightning-button-icon {
+    margin-left: 2%;
+}
+lightning-button{
+    width: 100%;
+}
+.sec{
+    margin-left: 10%;
+}
+
+
+.repoTitleColor{
+    color: blue;
+}

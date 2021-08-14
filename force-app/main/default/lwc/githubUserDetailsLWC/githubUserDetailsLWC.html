@@ -1,0 +1,97 @@
+
+<template>
+    <lightning-card  title="Github User Details " class="card" >
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-size_2-of-2"></p>
+        <div slot="footer">
+            <div class="inputButton" >
+                <lightning-input  
+                name="enter-search"
+                label="Search when user hits the 'enter' key"
+                type="search" 
+                value={userId} 
+                onchange={userUpdate}
+                variant = "label-hidden"
+                 ></lightning-input>
+                <lightning-button-icon  icon-name="utility:search"  alternative-text="Settings" title="Settings" size="medium" variant="brand" onclick={btnClicked}></lightning-button-icon>
+            
+            </div>
+             <div class="flexDiv topAlign slds-align_absolute-center" > 
+                <div class="slds-size_1-of-3"> 
+                    <img src={data.avatar_url}  alt="profile Image" >
+                    <div if:true={data.bio}>
+                    <div class="slds-box">
+                        <p>{data.bio}</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="slds-size_2-of-3">
+                        <div class="name">{data.name}</div>
+                
+                <section class="sec">
+                    <div class="flexDiv ">
+                        <div class="left slds-size_1-of-2">
+                            public_repos
+                        </div>
+                        <div class="right slds-size_1-of-2">
+                            {data.public_repos}
+                        </div>
+                    </div>
+                    <div class="flexDiv">
+                        <div class="left slds-size_1-of-2">
+                            public_gists
+                        </div>
+                        <div class="right slds-size_1-of-2">
+                            {data.public_gists}
+                        </div>
+                    </div>
+                    <div class="flexDiv">
+                        <div class="left slds-size_1-of-2">
+                            followers
+                        </div>
+                        <div class="right slds-size_1-of-2">
+                            {data.followers}
+                        </div>
+                    </div>
+                    <div class="flexDiv">
+                        <div class="left slds-size_1-of-2">
+                            following
+                        </div>
+                        <div class="right slds-size_1-of-2">
+                            {data.following}
+                        </div>
+                    </div>
+                 
+                </section>
+                
+               
+            </div>  
+            </div> 
+            <header class="slds-var-m-top_small">
+            <div class="slds-text-heading_small slds-text-align_left slds-var-p-top_medium slds-var-p-left_medium slds-box  slds-box_small">Popular Repositories</div>
+            </header>
+            <div class="demo-only--sizing slds-grid slds-wrap">
+               <template for:each={repoData} for:item="repo">
+                <div class="slds-size_1-of-3" key={repo.id}>
+                  <div class="slds-box slds-box_x-small slds-text-align_center slds-var-m-around_x-small slds-is-relative" >
+                      <p class="slds-text-title_bold repoTitleColor slds-text-align_left slds-var-p-left_small"><a href={repo.html_url}> {repo.name} </a></p>
+                      <p class="slds-text-color_weak slds-var-p-left_x-small slds-text-body_small slds-var-p-right_small slds-var-m-top_xx-small slds-text-align_left">{repo.description}</p>
+                       
+                        <div class="slds-var-m-top_xx-large"> 
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-var-p-left_small ">
+                                  <ul>stargazers : {repo.stargazers_count}</ul>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_left slds-var-p-left_small  ">
+                                    <ul>Main Langauge : {repo.language}</ul>
+                                  </div>
+                                 
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                </template>
+              </div>
+        </div>
+    </lightning-card>
+</template>
